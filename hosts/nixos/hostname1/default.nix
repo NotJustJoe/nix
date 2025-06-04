@@ -28,13 +28,13 @@
     # FIXME(starter): modify the options below to inform disko of the host's disk path and swap requirements.
     # IMPORTANT: nix-config-starter assumes a single disk per host. If you require more disks, you
     # must modify or create new dikso specs.
-    #{
-    #  _module.args = {
-    #    disk = "/dev/nvme0n1";
-    #    withSwap = true;
-    #    swapSize = 16;
-    #  };
-    #}
+    {
+    _module.args = {
+        disk = "/dev/sda";
+        withSwap = true;
+        swapSize = 16;
+      };
+    }
 
     (map lib.custom.relativeToRoot [
       #
